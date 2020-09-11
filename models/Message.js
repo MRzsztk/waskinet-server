@@ -3,6 +3,7 @@ const { Schema, model } = mongoose;
 
 const messageSchema = new Schema({
   email: String,
+  topic: String,
   message: String,
   createdAt: { type: Date, default: Date.now }
 });
