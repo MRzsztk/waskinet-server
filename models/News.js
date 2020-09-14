@@ -3,7 +3,6 @@ const { Schema, model } = mongoose;
 
 const newsSchema = new Schema({
   title: String,
-  tags: Array,
   content: String,
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now }

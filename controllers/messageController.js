@@ -23,10 +23,10 @@ module.exports = {
             const { email, topic, message } = req.body;
             const result = await Message.create({ email: email, topic: topic, message: message })
             if (!result) {
-                return res.status(404).json({
-                    message: 'Error sending message.',
+                return res.status(400).json({
+                    message: 'Wystapił bład podczas wysyłania wiadomości.',
                 })
-            }
+            } 
             return res.status(200).json({ sent: 'Twoja wiadomość została wysłana.'})
         } catch (error) {
             console.log(error)

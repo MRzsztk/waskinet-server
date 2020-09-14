@@ -20,9 +20,9 @@ module.exports = {
     },
     async store(req, res, next) {
         try {
-            const { title, tags, content } = req.body;
+            const { title, content } = req.body;
             console.log(title)
-            const result = await News.create({ title: title, tags: tags, content: content })
+            const result = await News.create({ title: title, content: content })
             if (!result) {
                 return res.status(404).json({
                     message: 'Error saving your text',
