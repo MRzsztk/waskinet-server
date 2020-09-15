@@ -5,6 +5,7 @@ module.exports = {
         try {
             console.log('fetching messages')
             const messages = await Message.find()
+            messages.sort((a, b) => (b.createdAt - a.createdAt))
             res.json(messages)
         } catch (error) {
             res.status(404).json(error)

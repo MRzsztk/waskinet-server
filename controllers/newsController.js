@@ -5,6 +5,7 @@ module.exports = {
         try {
             console.log('fetching news')
             const newsy = await News.find()
+            newsy.sort((a, b) => (b.createdAt - a.createdAt))
             res.json(newsy)
         } catch (error) {
             res.status(404).json(error)
