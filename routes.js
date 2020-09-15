@@ -14,8 +14,8 @@ router.post("/newsy/create", passport.authenticate('jwt', { session: false }), N
 router.delete("/newsy/delete/:id", passport.authenticate('jwt', { session: false }), NewsController.destroy);
 router.post("/messages", MessageController.store);
 router.get("/messages", passport.authenticate('jwt', { session: false }), MessageController.index);
+router.delete("/messages/delete/:id", passport.authenticate('jwt', { session: false }), MessageController.destroy);
 router.get("/uslugi", ServiceController.index);
 router.post("/uslugi/create", passport.authenticate('jwt', { session: false }), ServiceController.store);
-router.put("/uslugi/update/:id", passport.authenticate('jwt', { session: false }), ServiceController.update);
 router.delete("/uslugi/delete/:id", passport.authenticate('jwt', { session: false }), ServiceController.destroy);
 module.exports = router;
